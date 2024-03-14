@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: verbal-rook-java-springboot-gitops
+  description: This is GitOps manifest for verbal-rook-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: verbal-rook-java-springboot
+    janus-idp.io/tekton: verbal-rook-java-springboot 
+    backstage.io/kubernetes-id: verbal-rook-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:verbal-rook-java-springboot
